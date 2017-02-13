@@ -8,12 +8,30 @@
 
 import UIKit
 
-class pickerViewController: UIViewController {
+class pickerViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
+    var locations = [String]()
+    var selectedlocation : String = ""
+    let vc = folderTableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locations = ["iOS","Cook","Design","Color"]
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return locations.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        selectedlocation = locations[row]
+        return selectedlocation
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +40,17 @@ class pickerViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func cancelbt(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    
+    @IBAction func atlocation(_ sender: Any) {
+        print(selectedlocation)
+        vc.tableView.reloadSectionIndexTitles()
+        self.dismiss(animated: true, completion: nil)
+        dataName.append(selectedlocation)
+    }
+   
 }

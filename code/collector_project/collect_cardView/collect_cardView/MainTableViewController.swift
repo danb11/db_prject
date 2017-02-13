@@ -1,14 +1,14 @@
 //
-//  imgTableViewController.swift
-//  collector_project
+//  MainTableViewController.swift
+//  collect_cardView
 //
-//  Created by Danb on 2017. 2. 8..
+//  Created by Danb on 2017. 2. 12..
 //  Copyright © 2017년 Danb. All rights reserved.
 //
 
 import UIKit
 
-class imgTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,16 @@
 		B723FF011E49758800BFAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B723FEFF1E49758800BFAB8F /* Main.storyboard */; };
 		B723FF031E49758800BFAB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B723FF021E49758800BFAB8F /* Assets.xcassets */; };
 		B723FF061E49758800BFAB8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B723FF041E49758800BFAB8F /* LaunchScreen.storyboard */; };
+		B723FF391E49EB0800BFAB8F /* folderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B723FF381E49EB0800BFAB8F /* folderTableViewController.swift */; };
+		B723FF3B1E49F83400BFAB8F /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B723FF3A1E49F83400BFAB8F /* pickerViewController.swift */; };
+		B7E0BB3E1E4AEEAA0087BDA2 /* design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7E0BB3D1E4AEEAA0087BDA2 /* design.jpg */; };
+		B7E0BB401E4AEED00087BDA2 /* travel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7E0BB3F1E4AEED00087BDA2 /* travel.jpg */; };
+		B7E0BB471E4AF0960087BDA2 /* imgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0BB461E4AF0960087BDA2 /* imgTableViewCell.swift */; };
+		B7E0BB4D1E4B123D0087BDA2 /* makefolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0BB4C1E4B123D0087BDA2 /* makefolderViewController.swift */; };
+		B7E0BB4F1E4B18780087BDA2 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0BB4E1E4B18780087BDA2 /* FirstTableViewController.swift */; };
+		B7E0BB511E4C43660087BDA2 /* fall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7E0BB501E4C43660087BDA2 /* fall.jpg */; };
+		B7E0BB531E4C438B0087BDA2 /* road.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7E0BB521E4C438B0087BDA2 /* road.jpg */; };
+		B7E0BB551E4C44280087BDA2 /* folderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0BB541E4C44280087BDA2 /* folderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		B723FF021E49758800BFAB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B723FF051E49758800BFAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B723FF071E49758800BFAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B723FF381E49EB0800BFAB8F /* folderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = folderTableViewController.swift; sourceTree = "<group>"; };
+		B723FF3A1E49F83400BFAB8F /* pickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
+		B7E0BB3D1E4AEEAA0087BDA2 /* design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = design.jpg; path = "../../../../Desktop/폴라/세부/design.jpg"; sourceTree = "<group>"; };
+		B7E0BB3F1E4AEED00087BDA2 /* travel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = travel.jpg; path = "../../../../Desktop/폴라/제주2/travel.jpg"; sourceTree = "<group>"; };
+		B7E0BB461E4AF0960087BDA2 /* imgTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imgTableViewCell.swift; sourceTree = "<group>"; };
+		B7E0BB4C1E4B123D0087BDA2 /* makefolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makefolderViewController.swift; sourceTree = "<group>"; };
+		B7E0BB4E1E4B18780087BDA2 /* FirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
+		B7E0BB501E4C43660087BDA2 /* fall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fall.jpg; path = "../../../../Desktop/폴라/Brazil/fall.jpg"; sourceTree = "<group>"; };
+		B7E0BB521E4C438B0087BDA2 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = road.jpg; path = "../../../../Desktop/폴라/페루/마추픽추/road.jpg"; sourceTree = "<group>"; };
+		B7E0BB541E4C44280087BDA2 /* folderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = folderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +77,29 @@
 				B723FEFB1E49758800BFAB8F /* AppDelegate.swift */,
 				B723FEFD1E49758800BFAB8F /* ViewController.swift */,
 				B723FEFF1E49758800BFAB8F /* Main.storyboard */,
+				B7E0BB4C1E4B123D0087BDA2 /* makefolderViewController.swift */,
+				B7E0BB4E1E4B18780087BDA2 /* FirstTableViewController.swift */,
+				B723FF381E49EB0800BFAB8F /* folderTableViewController.swift */,
+				B7E0BB541E4C44280087BDA2 /* folderTableViewCell.swift */,
+				B723FF3A1E49F83400BFAB8F /* pickerViewController.swift */,
+				B7E0BB461E4AF0960087BDA2 /* imgTableViewCell.swift */,
 				B723FF021E49758800BFAB8F /* Assets.xcassets */,
 				B723FF041E49758800BFAB8F /* LaunchScreen.storyboard */,
+				B7E0BB411E4AEED60087BDA2 /* bgIMG */,
 				B723FF071E49758800BFAB8F /* Info.plist */,
 			);
 			path = collector_project;
+			sourceTree = "<group>";
+		};
+		B7E0BB411E4AEED60087BDA2 /* bgIMG */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0BB521E4C438B0087BDA2 /* road.jpg */,
+				B7E0BB501E4C43660087BDA2 /* fall.jpg */,
+				B7E0BB3D1E4AEEAA0087BDA2 /* design.jpg */,
+				B7E0BB3F1E4AEED00087BDA2 /* travel.jpg */,
+			);
+			name = bgIMG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +161,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E0BB3E1E4AEEAA0087BDA2 /* design.jpg in Resources */,
+				B7E0BB401E4AEED00087BDA2 /* travel.jpg in Resources */,
 				B723FF061E49758800BFAB8F /* LaunchScreen.storyboard in Resources */,
 				B723FF031E49758800BFAB8F /* Assets.xcassets in Resources */,
+				B7E0BB511E4C43660087BDA2 /* fall.jpg in Resources */,
 				B723FF011E49758800BFAB8F /* Main.storyboard in Resources */,
+				B7E0BB531E4C438B0087BDA2 /* road.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E0BB4F1E4B18780087BDA2 /* FirstTableViewController.swift in Sources */,
 				B723FEFE1E49758800BFAB8F /* ViewController.swift in Sources */,
+				B723FF391E49EB0800BFAB8F /* folderTableViewController.swift in Sources */,
+				B7E0BB551E4C44280087BDA2 /* folderTableViewCell.swift in Sources */,
+				B7E0BB471E4AF0960087BDA2 /* imgTableViewCell.swift in Sources */,
+				B723FF3B1E49F83400BFAB8F /* pickerViewController.swift in Sources */,
+				B7E0BB4D1E4B123D0087BDA2 /* makefolderViewController.swift in Sources */,
 				B723FEFC1E49758800BFAB8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +345,7 @@
 				B723FF0C1E49758800BFAB8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

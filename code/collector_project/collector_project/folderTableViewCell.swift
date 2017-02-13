@@ -10,6 +10,9 @@ import UIKit
 
 class folderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addfoldername: UILabel!
+    @IBOutlet weak var addfolderIMG: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

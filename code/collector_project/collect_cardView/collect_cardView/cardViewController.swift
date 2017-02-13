@@ -1,14 +1,14 @@
 //
-//  mainViewController.swift
-//  collector_project
+//  cardViewController.swift
+//  collect_cardView
 //
-//  Created by Danb on 2017. 2. 8..
+//  Created by Danb on 2017. 2. 12..
 //  Copyright © 2017년 Danb. All rights reserved.
 //
 
 import UIKit
 
-class mainViewController: UIViewController {
+class cardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

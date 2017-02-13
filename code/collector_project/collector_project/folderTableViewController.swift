@@ -8,16 +8,22 @@
 
 import UIKit
 
-class folderTableViewController: UITableViewController {
 
+var dataName = [String]()
+var images = ["design.jpg","travel.jpg"]
+
+class folderTableViewController: UITableViewController {
+    
+
+    var reuseIdentifier = "folder"
+   
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +34,52 @@ class folderTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dataName.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! imgTableViewCell
+        let destination = dataName [indexPath.row]
+        cell.addLabel.text = destination
+        
+        switch destination {
+        case "iOS":
+            cell.addIMG.image = UIImage(named: "travel.jpg")
+        case "Cook" :
+            cell.addIMG.image = UIImage(named: "design.jpg")
 
-        // Configure the cell...
+        case "Design" :
+            cell.addIMG.image = UIImage(named: "fall.jpg")
 
+        default:
+            cell.addIMG.image = UIImage(named: "road.jpg")
+
+        }
+ 
         return cell
+ 
     }
-    */
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+        dataName.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+    else if editingStyle == .insert {
+        }
+    }
+    
+    @IBAction func cancelbtt(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,3 +127,4 @@ class folderTableViewController: UITableViewController {
     */
 
 }
+

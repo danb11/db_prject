@@ -8,14 +8,48 @@
 
 import UIKit
 
+//var locations = [String]()
+//var selectedlocation : String = ""
+
+protocol MakeFolderDelegate {
+    func makeFolderView(SaveMakeFolder text : String)
+    func makeFolderViewClose()
+}
+
+
 class makefolderViewController: UIViewController {
 
+    @IBOutlet weak var folderNameTF: UITextField!
+    @IBOutlet weak var tagTF: UITextField!
+    
+    var delegate : MakeFolderDelegate? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func makefolderCloseBT(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+        if let theDelegate = self.delegate {
+            theDelegate.makeFolderViewClose()
+        }
+        
+    }
+    
+    @IBAction func folderSaveBT(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+        if let theDelegate = self.delegate {
+            theDelegate.makeFolderView(SaveMakeFolder: folderNameTF.text!)
+        }
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

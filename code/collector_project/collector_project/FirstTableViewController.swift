@@ -8,7 +8,21 @@
 
 import UIKit
 
-class FirstTableViewController: UITableViewController {
+
+
+
+class FirstTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MakeFolderDelegate {
+   
+    var reuseIdentifier = "folder"
+    var folderName = [String]()
+    var bgimage = ["design.jpg","travel.jpg"]
+
+    
+    @IBOutlet weak var tableView : UITableView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +33,13 @@ class FirstTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    @IBAction func gotoMakeFolder(sender : AnyObject) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "makefolderViewController") as? makefolderViewController
+        viewController?.delegate = self
+        self.present(viewController!, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,45 +48,65 @@ class FirstTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return folderName.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "folder", for: indexPath) as! folderTableViewCell
+        let addfoldername = folderName[indexPath.row]
+        cell.addfoldername.text = addfoldername
+        cell.addfolderIMG.image = UIImage(named:"design.jpg")
+        
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            folderName.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            // Delete the row from the data source
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    // makeFolderDelegate
+    func makeFolderView(SaveMakeFolder text: String) {
+       // print(text)
+        self.folderName.append(text)
+        self.tableView.reloadData()
+    }
+   
+    
+    func makeFolderViewClose() {
+       // let alertController = UIAlertController(title: "alert", message: "makeFolderViewClosed", preferredStyle: .alert)
+       // let cancle = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+      //  alertController.addAction(cancle)
+//        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
 
     /*
     // Override to support rearranging the table view.
