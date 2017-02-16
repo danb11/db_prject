@@ -17,11 +17,16 @@ class linkViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
+    @IBAction func link_saveBT(_ sender: Any) {
+        linkdatasource.linktitle = linktitleTF.text!
+        linkdatasource.linksub = linksubTF.text!
+    }
+    
     @IBAction func backBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBOutlet weak var linkdefaultIMG: UIImageView!
     
+    @IBOutlet weak var linkdefaultIMG: UIImageView!
     @IBOutlet weak var linktitleTF: UITextField!
     @IBOutlet weak var linksubTF: UITextView!
     

@@ -331,6 +331,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="check_small"/>
                                         <connections>
+                                            <action selector="link_saveBT:" destination="WST-rN-SMh" eventType="touchUpInside" id="5Fn-ly-zXG"/>
                                             <segue destination="rDF-mg-kiE" kind="presentation" id="SbU-XR-8Qa"/>
                                         </connections>
                                     </button>

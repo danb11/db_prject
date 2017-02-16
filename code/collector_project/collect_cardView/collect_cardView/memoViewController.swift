@@ -24,7 +24,7 @@ class memoViewController: UIViewController {
     @IBAction func memo_saveBT(_ sender: Any) {
         memodatasource.memotitle = memotitleTF.text!
         memodatasource.memosub = memosubTF.text!
-        print(memodatasource.memotitle)
+        //print(memodatasource.memotitle)
     }
     
     @IBAction func backBT(_ sender: Any) {
