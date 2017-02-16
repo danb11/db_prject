@@ -79,16 +79,24 @@
 				B723FEFF1E49758800BFAB8F /* Main.storyboard */,
 				B7E0BB4C1E4B123D0087BDA2 /* makefolderViewController.swift */,
 				B7E0BB4E1E4B18780087BDA2 /* FirstTableViewController.swift */,
-				B723FF381E49EB0800BFAB8F /* folderTableViewController.swift */,
 				B7E0BB541E4C44280087BDA2 /* folderTableViewCell.swift */,
-				B723FF3A1E49F83400BFAB8F /* pickerViewController.swift */,
 				B7E0BB461E4AF0960087BDA2 /* imgTableViewCell.swift */,
+				B7BA37AB1E52FF9700C43ACE /* picker */,
 				B723FF021E49758800BFAB8F /* Assets.xcassets */,
 				B723FF041E49758800BFAB8F /* LaunchScreen.storyboard */,
 				B7E0BB411E4AEED60087BDA2 /* bgIMG */,
 				B723FF071E49758800BFAB8F /* Info.plist */,
 			);
 			path = collector_project;
+			sourceTree = "<group>";
+		};
+		B7BA37AB1E52FF9700C43ACE /* picker */ = {
+			isa = PBXGroup;
+			children = (
+				B723FF381E49EB0800BFAB8F /* folderTableViewController.swift */,
+				B723FF3A1E49F83400BFAB8F /* pickerViewController.swift */,
+			);
+			name = picker;
 			sourceTree = "<group>";
 		};
 		B7E0BB411E4AEED60087BDA2 /* bgIMG */ = {

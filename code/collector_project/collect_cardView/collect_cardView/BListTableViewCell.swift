@@ -10,6 +10,10 @@ import UIKit
 
 class BListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var memoTitle: UILabel!
+    @IBOutlet weak var memoSub: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

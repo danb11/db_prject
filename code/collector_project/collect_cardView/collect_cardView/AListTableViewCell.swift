@@ -10,6 +10,14 @@ import UIKit
 
 class AListTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var cardTitle: UILabel!
+    
+    @IBOutlet weak var cardIMG: UIImageView!
+    
+    @IBOutlet weak var cardSub: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

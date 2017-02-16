@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+struct linkdata {
+    var linktitle : String = ""
+    var linksub : String = ""
+}
+
+
+struct memodata {
+    var memotitle : String = ""
+    var memosub : String = ""
+}

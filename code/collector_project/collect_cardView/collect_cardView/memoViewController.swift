@@ -9,7 +9,30 @@
 import UIKit
 
 class memoViewController: UIViewController {
+    
+    @IBOutlet weak var memotitleTF: UITextField!
+    
+    @IBOutlet weak var memosubTF: UITextView!
+    
+    var memodatasource : memodata
+    
+    required init?(coder aDecoder: NSCoder) {
+        memodatasource = memodata()
+        super.init(coder: aDecoder)
+    }
+    
+    @IBAction func memo_saveBT(_ sender: Any) {
+        memodatasource.memotitle = memotitleTF.text!
+        memodatasource.memosub = memosubTF.text!
+        print(memodatasource.memotitle)
+    }
+    
+    @IBAction func backBT(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

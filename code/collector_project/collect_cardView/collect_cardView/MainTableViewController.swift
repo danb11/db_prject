@@ -5,68 +5,105 @@
 //  Created by Danb on 2017. 2. 12..
 //  Copyright © 2017년 Danb. All rights reserved.
 //
-
+/*
 import UIKit
 
-class MainTableViewController: UITableViewController {
-
+struct cellData {
+    let cell : Int!
+    let text : String!
+    let image : UIImage!
+    let subtext : String!
+}
+class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableA: UITableView!
+    var arrayCellData = [cellData]()
+   // var listcell = "tb_A"
+   // var cardcell = "tb_B"
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // tableView.registerNib(UINib(nibName: "listTableViewCell", bundle: nil), forCellReuseIdentifier: "listtable")
+        
+        tableA.dataSource = self
+        arrayCellData = [cellData(cell : 1, text : "first", image : #imageLiteral(resourceName: "test1"), subtext: "subsubsssbbbsubusububububub"),
+                         cellData(cell : 2, text : "omg",image : #imageLiteral(resourceName: "test3"), subtext: "wow i did it lol"),
+                         cellData(cell : 1, text : "mgmgmggg",image : #imageLiteral(resourceName: "test2"), subtext: "subsubsssbbbsubusububububub")]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if arrayCellData[indexPath.row].cell == 1 {
+            return 143
+        }
+        else if arrayCellData[indexPath.row].cell == 2 {
+            return 100
+        }
+            
+        else {
+            return 143
+        }
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayCellData.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if arrayCellData[indexPath.row].cell == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "listtable", for: indexPath) as! listTableViewCell
+            cell.listcellIMG.image = arrayCellData[indexPath.row].image
+            cell.listcelltitle.text = arrayCellData[indexPath.row].text
+            cell.listcellsub.text = arrayCellData[indexPath.row].subtext
+            
+            return cell
+            
+        }
+        else if arrayCellData[indexPath.row].cell == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cardtable", for: indexPath) as!cardlistTableViewCell
 
-        // Configure the cell...
+           // let cell = Bundle.main.loadNibNamed("cardlistTableViewCell", owner: self, options: nil)?.first as! cardlistTableViewCell
+            cell.memocelltitle.text = arrayCellData[indexPath.row].text
+            cell.memocellsub.text = arrayCellData[indexPath.row].subtext
+            
+            return cell
+            
+        }
+            
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "listtable", for: indexPath) as! listTableViewCell
+            cell.listcellIMG.image = arrayCellData[indexPath.row].image
+            cell.listcelltitle.text = arrayCellData[indexPath.row].text
+            cell.listcellsub.text = arrayCellData[indexPath.row].subtext
 
-        return cell
+            return cell
+        }
+
     }
-    */
 
-    /*
+   
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            arrayCellData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
-
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -93,3 +130,4 @@ class MainTableViewController: UITableViewController {
     */
 
 }
+ */

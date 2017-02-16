@@ -5,11 +5,16 @@
 //  Created by Danb on 2017. 2. 12..
 //  Copyright © 2017년 Danb. All rights reserved.
 //
-
+/*
 import UIKit
 
 class cardlistTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var memocelltitle: UILabel!
+    @IBOutlet weak var memocellsub: UITextView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,3 +27,4 @@ class cardlistTableViewCell: UITableViewCell {
     }
     
 }
+*/

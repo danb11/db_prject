@@ -8,18 +8,15 @@
 
 import UIKit
 
-class MemoTextViewController: UIViewController {
+class detailViewController: UIViewController {
     
     @IBOutlet weak var detaildefaultIMG: UIImageView!
-    @IBOutlet weak var linkdefaultIMG: UIImageView!
 
-    @IBAction func memobackBT(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+
     @IBAction func detailbackBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.detaildefaultIMG.image = #imageLiteral(resourceName: "default_image")

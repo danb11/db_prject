@@ -9,9 +9,26 @@
 import UIKit
 
 class linkViewController: UIViewController {
+    
+    var linkdatasource : linkdata
+    
+    required init?(coder aDecoder: NSCoder) {
+        linkdatasource = linkdata()
+        super.init(coder: aDecoder)
+    }
 
+    @IBAction func backBT(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var linkdefaultIMG: UIImageView!
+    
+    @IBOutlet weak var linktitleTF: UITextField!
+    @IBOutlet weak var linksubTF: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.linkdefaultIMG.image = #imageLiteral(resourceName: "add_defaultIMG")
 
         // Do any additional setup after loading the view.
     }

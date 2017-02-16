@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 
 
@@ -67,7 +68,7 @@ class FirstTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "folder", for: indexPath) as! folderTableViewCell
         let addfoldername = folderName[indexPath.row]
         cell.addfoldername.text = addfoldername
-        cell.addfolderIMG.image = UIImage(named:"design.jpg")
+        cell.addfolderIMG.image = #imageLiteral(resourceName: "sky")
         
         return cell
     }
