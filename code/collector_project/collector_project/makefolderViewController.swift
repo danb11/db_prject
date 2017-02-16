@@ -45,7 +45,7 @@ class makefolderViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
         if let theDelegate = self.delegate {
-            theDelegate.makeFolderView(SaveMakeFolder: folderNameTF.text!)
+            theDelegate.makeFolderView(SaveMakeFolder: (folderNameTF.text!))
         }
 
     }

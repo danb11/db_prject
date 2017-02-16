@@ -13,7 +13,7 @@ import UIKit
 
 class FirstTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MakeFolderDelegate {
    
-    var reuseIdentifier = "folder"
+    //var reuseIdentifier = "folder"
     var folderName = [String]()
     var bgimage = ["design.jpg","travel.jpg"]
 
