@@ -14,6 +14,7 @@
 		B7B494D11E544B3500908D89 /* memoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D01E544B3500908D89 /* memoViewController.swift */; };
 		B7B494D31E544B7A00908D89 /* linkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D21E544B7A00908D89 /* linkViewController.swift */; };
 		B7B494D61E54505300908D89 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D51E54505300908D89 /* data.swift */; };
+		B7B494D81E5584B100908D89 /* datasingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D71E5584B100908D89 /* datasingle.swift */; };
 		B7BA378F1E50281E00C43ACE /* cardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA378E1E50281E00C43ACE /* cardViewController.swift */; };
 		B7BA37921E503D2000C43ACE /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA37901E503D2000C43ACE /* listTableViewCell.swift */; };
 		B7BA37931E503D2000C43ACE /* listTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7BA37911E503D2000C43ACE /* listTableViewCell.xib */; };
@@ -65,6 +66,7 @@
 		B7B494D01E544B3500908D89 /* memoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoViewController.swift; sourceTree = "<group>"; };
 		B7B494D21E544B7A00908D89 /* linkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linkViewController.swift; sourceTree = "<group>"; };
 		B7B494D51E54505300908D89 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		B7B494D71E5584B100908D89 /* datasingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datasingle.swift; sourceTree = "<group>"; };
 		B7BA378E1E50281E00C43ACE /* cardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardViewController.swift; sourceTree = "<group>"; };
 		B7BA37901E503D2000C43ACE /* listTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		B7BA37911E503D2000C43ACE /* listTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = listTableViewCell.xib; sourceTree = "<group>"; };
@@ -102,6 +104,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B787BDC11E56C7740086B9C4 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				B7B494D51E54505300908D89 /* data.swift */,
+				B7B494D71E5584B100908D89 /* datasingle.swift */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		B79BCBE11E4DDF08004A18B4 = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +136,7 @@
 			children = (
 				B7BA37A51E52CEB400C43ACE /* Assets.xcassets */,
 				B79BCBF11E4DDF08004A18B4 /* Main.storyboard */,
-				B7B494D51E54505300908D89 /* data.swift */,
+				B787BDC11E56C7740086B9C4 /* data */,
 				B79BCBED1E4DDF08004A18B4 /* AppDelegate.swift */,
 				B79BCBEF1E4DDF08004A18B4 /* ViewController.swift */,
 				B7BA37B51E53277000C43ACE /* #2 */,
@@ -356,6 +367,7 @@
 				B7BA37B11E531A3300C43ACE /* FirstTableViewController.swift in Sources */,
 				B7BA37B01E531A3300C43ACE /* folderTableViewCell.swift in Sources */,
 				B79BCBEE1E4DDF08004A18B4 /* AppDelegate.swift in Sources */,
+				B7B494D81E5584B100908D89 /* datasingle.swift in Sources */,
 				B7BA379B1E5044D600C43ACE /* MainTableViewController.swift in Sources */,
 				B7BA37A21E51621A00C43ACE /* BListTableViewCell.swift in Sources */,
 				B7BA37961E5040D200C43ACE /* cardlistTableViewCell.swift in Sources */,

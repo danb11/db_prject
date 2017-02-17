@@ -15,7 +15,7 @@ struct cellData {
     let subtext : String!
 }
 
-class CardTableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CardTableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, LinkDelegate {
 
     @IBAction func cardbackBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -25,8 +25,6 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
     
     //@IBOutlet weak var listTableView: UITableView!
     
-
-
     
     @IBOutlet weak var addcardbt: UIButton!
     @IBOutlet weak var writebt: UIButton!
@@ -36,19 +34,20 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
     var linkbtcenter : CGPoint!
     var effect: UIVisualEffect!
     
-    var arrayCellData = [cellData]()
+    //var arrayCellData = [cellData]()
     
     override func viewDidLoad() {
         listView.dataSource = self
         listView.delegate = self
         super.viewDidLoad()
-        arrayCellData = [cellData(cell : 1, text : "Jeju Island", image : #imageLiteral(resourceName: "test1"), subtext: "Jeju island summer summer summer information information Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
+        
+      /*  arrayCellData = [cellData(cell : 1, text : "Jeju Island", image : #imageLiteral(resourceName: "test1"), subtext: "Jeju island summer summer summer information information Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
                          cellData(cell : 2, text : "Free Image URL",image : nil, subtext: "WOW i did it lol Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
                          cellData(cell : 1, text : "Travel Tip",image : #imageLiteral(resourceName: "test3"), subtext: "Blablabla :) will save data haha Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu")]
         
        // effect = blureffect.effect
       //  blureffect.effect = nil
-        
+      */
         writebtccenter = writebt.center
         linkbtcenter = linkbt.center
         
@@ -64,58 +63,55 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCellData.count
+        return Datasingle.sharedInstance.linkdataSG.count + Datasingle.sharedInstance.memodataSG.count
     }
 
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if arrayCellData[indexPath.row].cell == 1 {
+    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if linkarray [indexPath.row].cell == 1 {
             return 143
         }
-        else if arrayCellData[indexPath.row].cell == 2 {
+        else if linkarray [indexPath.row].cell == 2 {
             return 110
         }
         else {
             return 143
         }
     }
- 
-    
+ */
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if arrayCellData[indexPath.row].cell == 1 {
+        if UITableViewCell.self == AListTableViewCell.self {
+            let addcardtitle = String(describing: Datasingle.sharedInstance.linkdataSG[indexPath.row].linktitle)
+            let addcardsub = String(describing: Datasingle.sharedInstance.linkdataSG[indexPath.row].linksub)
             let cell = tableView.dequeueReusableCell(withIdentifier: "cardlist", for: indexPath) as! AListTableViewCell
-            cell.cardIMG.image = arrayCellData[indexPath.row].image
-            cell.cardTitle.text = arrayCellData[indexPath.row].text
-            cell.cardSub.text = arrayCellData[indexPath.row].subtext
+            cell.cardTitle.text = addcardtitle
+            cell.cardSub.text = addcardsub
             
-            return cell
-            
-        }
-        else if arrayCellData[indexPath.row].cell == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "memolist", for: indexPath) as! BListTableViewCell
-            
-            // let cell = Bundle.main.loadNibNamed("cardlistTableViewCell", owner: self, options: nil)?.first as! cardlistTableViewCell
-            cell.memoTitle.text = arrayCellData[indexPath.row].text
-            cell.memoSub.text = arrayCellData[indexPath.row].subtext
-            
+           /*
+            let addfoldername = folderName[indexPath.row]
+            cell.addfoldername.text = addfoldername
+            cell.addfolderIMG.image = #imageLiteral(resourceName: "sky")
+
+            */
             return cell
             
         }
             
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cardlist", for: indexPath) as! AListTableViewCell
-            cell.cardIMG.image = arrayCellData[indexPath.row].image
-            cell.cardTitle.text = arrayCellData[indexPath.row].text
-            cell.cardSub.text = arrayCellData[indexPath.row].subtext
+            let cell = tableView.dequeueReusableCell(withIdentifier: "memolist", for: indexPath) as! BListTableViewCell
+            cell.memoTitle.text = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memotitle)
+            cell.memoSub.text = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memosub)
             
             return cell
         }
+        
+// let cell = Bundle.main.loadNibNamed("cardlistTableViewCell", owner: self, options: nil)?.first as! cardlistTableViewCell
         
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            arrayCellData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -128,9 +124,9 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
             blureffect.isHidden = true
             writebt.isHidden = true
         }
- 
     }
  */
+    
     @IBAction func addtocancelBT(_ sender: UIButton) {
         self.blureffect.isHidden = false
         if addcardbt.currentImage == #imageLiteral(resourceName: "write_icon") {
@@ -153,10 +149,33 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
             self.blureffect.isHidden = true
         }
     }
+    
+    /*
+     
+     var folderName = [String]()
 
+    func makeFolderView(SaveMakeFolder text: String) {
+        // print(text)
+        self.folderName.append(text)
+        self.tableView.reloadData()
+    }
+     var linkdataSG : Array<linkdata> = []
 
-
+ */
+    
+ func linkcardView(SaveLink Title: String) {
+        // print(text)
         
+    }
+
+    
+    func linkclose() {
+        
+    }
+
+
+
+    
         
     }
 

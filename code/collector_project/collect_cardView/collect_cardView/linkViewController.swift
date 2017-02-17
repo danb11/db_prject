@@ -8,8 +8,21 @@
 
 import UIKit
 
+
+protocol LinkDelegate {
+    func linkcardView(SaveLink Title:String)
+    func linkclose()
+}
+
+
 class linkViewController: UIViewController {
     
+    @IBOutlet weak var linkdefaultIMG: UIImageView!
+    @IBOutlet weak var linktitleTF: UITextField!
+    @IBOutlet weak var linksubTF: UITextView!
+    
+    var delegate : LinkDelegate? = nil
+
     var linkdatasource : linkdata
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,17 +31,25 @@ class linkViewController: UIViewController {
     }
 
     @IBAction func link_saveBT(_ sender: Any) {
+        
         linkdatasource.linktitle = linktitleTF.text!
         linkdatasource.linksub = linksubTF.text!
+       
+        if let theDelegate = self.delegate {
+            theDelegate.linkcardView(SaveLink :(linktitleTF.text!))
+        }
+        
     }
     
     @IBAction func backBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        
+        if let theDelegate = self.delegate {
+            theDelegate.linkclose()
+        }
+        
+        
     }
-    
-    @IBOutlet weak var linkdefaultIMG: UIImageView!
-    @IBOutlet weak var linktitleTF: UITextField!
-    @IBOutlet weak var linksubTF: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

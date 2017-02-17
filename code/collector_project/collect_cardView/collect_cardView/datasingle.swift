@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+private let Data = Datasingle()
+
+class Datasingle {
+    
+    var linkdataSG : Array<linkdata> = []
+    var memodataSG : Array<memodata> = []
+
+    class var sharedInstance: Datasingle {
+        return Data
+    }
+}
