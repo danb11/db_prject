@@ -213,7 +213,7 @@
         <!--Memo View Controller-->
         <scene sceneID="TMM-3k-b5U">
             <objects>
-                <viewController id="YIh-5C-Q5W" customClass="memoViewController" customModule="collect_cardView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memoVC" id="YIh-5C-Q5W" customClass="memoViewController" customModule="collect_cardView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uGi-v8-xKn"/>
                         <viewControllerLayoutGuide type="bottom" id="q6A-Wo-qdX"/>
@@ -308,7 +308,7 @@
         <!--Link View Controller-->
         <scene sceneID="Wwl-TH-eAL">
             <objects>
-                <viewController id="WST-rN-SMh" customClass="linkViewController" customModule="collect_cardView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="linkVC" id="WST-rN-SMh" customClass="linkViewController" customModule="collect_cardView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ao-V3-4uI"/>
                         <viewControllerLayoutGuide type="bottom" id="iEA-cY-83m"/>
@@ -738,7 +738,7 @@
         <image name="write_icon" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q9G-2P-5nF"/>
         <segue reference="Mci-HX-TRk"/>
+        <segue reference="q9G-2P-5nF"/>
     </inferredMetricsTieBreakers>
 </document>
