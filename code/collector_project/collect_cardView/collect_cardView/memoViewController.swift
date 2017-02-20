@@ -22,16 +22,19 @@ class memoViewController: UIViewController {
     }
     
     @IBAction func memo_saveBT(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
         memodatasource.memotitle = memotitleTF.text!
         memodatasource.memosub = memosubTF.text!
+        
+        Datasingle.sharedInstance.memodataSG.append(memodatasource)
+
         //print(memodatasource.memotitle)
     }
     
     @IBAction func backBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

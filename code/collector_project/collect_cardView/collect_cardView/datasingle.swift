@@ -19,3 +19,16 @@ class Datasingle {
         return Data
     }
 }
+
+
+/*
+class DataSingle {
+    static let sharedInstance : DataSingle = {
+        let instance = DataSingle()
+        return instance
+    }()
+    
+    var linkdataSG : Array<linkdata> = []
+    var memodataSG : Array<memodata> = []
+}
+ */

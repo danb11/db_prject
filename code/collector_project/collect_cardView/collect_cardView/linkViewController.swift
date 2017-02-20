@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol LinkDelegate {
-    func linkcardView(SaveLink Title:String)
+   // func linkcardView(SaveLink Title:String)
     func linkclose()
 }
 
@@ -31,14 +31,17 @@ class linkViewController: UIViewController {
     }
 
     @IBAction func link_saveBT(_ sender: Any) {
-        
         linkdatasource.linktitle = linktitleTF.text!
         linkdatasource.linksub = linksubTF.text!
-       
+        //print (linkdata.link)
+        
+        Datasingle.sharedInstance.linkdataSG.insert(linkdatasource, at: 0)
+        self.dismiss(animated: true, completion: nil)
+       /*
         if let theDelegate = self.delegate {
             theDelegate.linkcardView(SaveLink :(linktitleTF.text!))
         }
-        
+        */
     }
     
     @IBAction func backBT(_ sender: Any) {
@@ -47,7 +50,6 @@ class linkViewController: UIViewController {
         if let theDelegate = self.delegate {
             theDelegate.linkclose()
         }
-        
         
     }
     

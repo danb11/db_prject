@@ -31,6 +31,12 @@ class makefolderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    /*
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear()
+        folderNameTF.font = UIFont(name: "Gotham Rounded Light", size: 40)
+    }
+ */
 
     @IBAction func makefolderCloseBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

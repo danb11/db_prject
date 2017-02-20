@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 struct cellData {
     let cell : Int!
@@ -16,6 +17,10 @@ struct cellData {
 }
 
 class CardTableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, LinkDelegate {
+    
+    let realm = try! Realm()
+    let result = try! Realm().objects(FolderData.self)
+
 
     @IBAction func cardbackBT(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -34,20 +39,21 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
     var linkbtcenter : CGPoint!
     var effect: UIVisualEffect!
     
-    //var arrayCellData = [cellData]()
+    var arrayCellData = [cellData]()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         listView.dataSource = self
         listView.delegate = self
-        super.viewDidLoad()
+        listView.reloadData()
         
-      /*  arrayCellData = [cellData(cell : 1, text : "Jeju Island", image : #imageLiteral(resourceName: "test1"), subtext: "Jeju island summer summer summer information information Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
+        /*
+        arrayCellData = [cellData(cell : 1, text : "Jeju Island", image : #imageLiteral(resourceName: "test1"), subtext: "Jeju island summer summer summer information information Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
                          cellData(cell : 2, text : "Free Image URL",image : nil, subtext: "WOW i did it lol Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"),
                          cellData(cell : 1, text : "Travel Tip",image : #imageLiteral(resourceName: "test3"), subtext: "Blablabla :) will save data haha Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu")]
+        */
         
-       // effect = blureffect.effect
-      //  blureffect.effect = nil
-      */
+
         writebtccenter = writebt.center
         linkbtcenter = linkbt.center
         
@@ -56,6 +62,9 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
 
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        listView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,60 +72,64 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Datasingle.sharedInstance.linkdataSG.count + Datasingle.sharedInstance.memodataSG.count
+        return Datasingle.sharedInstance.linkdataSG.count
     }
 
     
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if linkarray [indexPath.row].cell == 1 {
-            return 143
-        }
-        else if linkarray [indexPath.row].cell == 2 {
-            return 110
-        }
-        else {
-            return 143
-        }
-    }
- */
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        //        if linkarray [indexPath.row].cell == 1 {
+////            return 143
+////        }
+////        else if linkarray [indexPath.row].cell == 2 {
+////            return 110
+////        }
+////        else {
+////            return 143
+////        }
+//    }
+ 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if UITableViewCell.self == AListTableViewCell.self {
+
+       // if UITableViewCell == AListTableViewCell {
             let addcardtitle = String(describing: Datasingle.sharedInstance.linkdataSG[indexPath.row].linktitle)
             let addcardsub = String(describing: Datasingle.sharedInstance.linkdataSG[indexPath.row].linksub)
             let cell = tableView.dequeueReusableCell(withIdentifier: "cardlist", for: indexPath) as! AListTableViewCell
             cell.cardTitle.text = addcardtitle
             cell.cardSub.text = addcardsub
-            
+            cell.cardIMG.image = #imageLiteral(resourceName: "test3")
+            //print("hello")
+    
+            return cell
            /*
             let addfoldername = folderName[indexPath.row]
             cell.addfoldername.text = addfoldername
             cell.addfolderIMG.image = #imageLiteral(resourceName: "sky")
 
             */
-            return cell
-            
-        }
-            
-        else {
+       // }
+        
+        /*
             let cell = tableView.dequeueReusableCell(withIdentifier: "memolist", for: indexPath) as! BListTableViewCell
-            cell.memoTitle.text = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memotitle)
-            cell.memoSub.text = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memosub)
+            let addmemotitle = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memotitle)
+            let addmemosub = String(describing: Datasingle.sharedInstance.memodataSG[indexPath.row].memosub)
+            cell.memotitleTV = addmemotitle
+            cell.memosubTV = addmemosub
             
             return cell
-        }
         
-// let cell = Bundle.main.loadNibNamed("cardlistTableViewCell", owner: self, options: nil)?.first as! cardlistTableViewCell
-        
+    */
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            }
+        else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
-    }
+    
     
    /* @IBAction func hidememoclicked(_ sender: Any) {
         if addcardbt.currentImage == #imageLiteral(resourceName: "cancel_con_B") {
@@ -126,6 +139,28 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
         }
     }
  */
+    }
+
+
+    @IBAction func gotoMemo(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let memoview : memoViewController = storyBoard.instantiateViewController(withIdentifier: "memoVC") as! memoViewController
+       // viewController?.delegate = self
+        self.present(memoview,animated: true, completion: nil)
+        blureffect.isHidden = true
+
+    }
+    
+    @IBAction func gotoLink(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let linkview : linkViewController = storyBoard.instantiateViewController(withIdentifier: "linkVC") as! linkViewController
+        // viewController?.delegate = self
+        self.present(linkview,animated: true, completion: nil)
+        blureffect.isHidden = true
+
+    }
+    
+    
     
     @IBAction func addtocancelBT(_ sender: UIButton) {
         self.blureffect.isHidden = false
@@ -162,12 +197,12 @@ class CardTableViewController : UIViewController, UITableViewDelegate, UITableVi
      var linkdataSG : Array<linkdata> = []
 
  */
-    
+    /*
  func linkcardView(SaveLink Title: String) {
         // print(text)
         
     }
-
+*/
     
     func linkclose() {
         

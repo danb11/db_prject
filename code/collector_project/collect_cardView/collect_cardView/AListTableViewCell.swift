@@ -9,14 +9,14 @@
 import UIKit
 
 class AListTableViewCell: UITableViewCell {
-
+   // var textMain: String = ""
+   // var textSub: String = ""
 
     @IBOutlet weak var cardTitle: UILabel!
     
     @IBOutlet weak var cardIMG: UIImageView!
     
     @IBOutlet weak var cardSub: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +25,17 @@ class AListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+       // print(cardTitle.text)
         // Configure the view for the selected state
     }
+    
+    
+    /*
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.cardTitle.text = textMain
+        self.cardSub.text = textSub
+    }
+ */
 
 }

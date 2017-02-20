@@ -7,12 +7,14 @@
 //
 
 import UIKit
-import Realm
-
-
+import RealmSwift
 
 
 class FirstTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MakeFolderDelegate {
+    
+    let realm = try! Realm()
+    let result = try! Realm().objects(FolderData.self)
+    
    
     //var reuseIdentifier = "folder"
     var folderName = [String]()
@@ -27,7 +29,14 @@ class FirstTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        realm.beginWrite()
+        realm.create(FolderData.self, value: ["name": "lkhjfbkj,hjfjr"])
+        try! realm.commitWrite()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(result[0].name)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,6 +79,9 @@ class FirstTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.addfoldername.text = addfoldername
         cell.addfolderIMG.image = #imageLiteral(resourceName: "sky")
         
+        
+       // cell.addfoldername.font = UIFont(name: "Gotham Rounded Light", size: 60)
+
         return cell
     }
 

@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		370D3401806306D24F9097C5 /* Pods_collect_cardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CF5BEBAC9592A2CEB34DD6 /* Pods_collect_cardView.framework */; };
+		B73460281E57078B00712165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73460261E57078B00712165 /* Main.storyboard */; };
+		B748B3A41E5AD10E0081818C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B748B3A31E5AD10E0081818C /* Models.swift */; };
 		B79BCBEE1E4DDF08004A18B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BCBED1E4DDF08004A18B4 /* AppDelegate.swift */; };
-		B79BCBF31E4DDF08004A18B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79BCBF11E4DDF08004A18B4 /* Main.storyboard */; };
 		B79BCBF81E4DDF08004A18B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79BCBF61E4DDF08004A18B4 /* LaunchScreen.storyboard */; };
 		B7B494D11E544B3500908D89 /* memoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D01E544B3500908D89 /* memoViewController.swift */; };
 		B7B494D31E544B7A00908D89 /* linkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B494D21E544B7A00908D89 /* linkViewController.swift */; };
@@ -33,36 +34,13 @@
 /* Begin PBXFileReference section */
 		2E73570F5BF969CCE9978302 /* Pods-collect_cardView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-collect_cardView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-collect_cardView/Pods-collect_cardView.debug.xcconfig"; sourceTree = "<group>"; };
 		B3CF5BEBAC9592A2CEB34DD6 /* Pods_collect_cardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_collect_cardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73460271E57078B00712165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B748B3A31E5AD10E0081818C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B79BCBEA1E4DDF08004A18B4 /* collect_cardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collect_cardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79BCBED1E4DDF08004A18B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79BCBEF1E4DDF08004A18B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B79BCBF21E4DDF08004A18B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B79BCBF71E4DDF08004A18B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B79BCBF91E4DDF08004A18B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B494B71E54491C00908D89 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Black.otf"; path = "../../../../../Library/Fonts/Gotham-Black.otf"; sourceTree = "<group>"; };
-		B7B494B81E54491C00908D89 /* Gotham-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-BlackItalic.otf"; path = "../../../../../Library/Fonts/Gotham-BlackItalic.otf"; sourceTree = "<group>"; };
-		B7B494B91E54491C00908D89 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Bold.otf"; path = "../../../../../Library/Fonts/Gotham-Bold.otf"; sourceTree = "<group>"; };
-		B7B494BA1E54491C00908D89 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-BoldItalic.otf"; path = "../../../../../Library/Fonts/Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
-		B7B494BB1E54491C00908D89 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Book.otf"; path = "../../../../../Library/Fonts/Gotham-Book.otf"; sourceTree = "<group>"; };
-		B7B494BC1E54491C00908D89 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-BookItalic.otf"; path = "../../../../../Library/Fonts/Gotham-BookItalic.otf"; sourceTree = "<group>"; };
-		B7B494BD1E54491C00908D89 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Light.otf"; path = "../../../../../Library/Fonts/Gotham-Light.otf"; sourceTree = "<group>"; };
-		B7B494BE1E54491C00908D89 /* Gotham-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-LightItalic.otf"; path = "../../../../../Library/Fonts/Gotham-LightItalic.otf"; sourceTree = "<group>"; };
-		B7B494BF1E54491C00908D89 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "../../../../../Library/Fonts/Gotham-Medium.otf"; sourceTree = "<group>"; };
-		B7B494C01E54491C00908D89 /* Gotham-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-MediumItalic.otf"; path = "../../../../../Library/Fonts/Gotham-MediumItalic.otf"; sourceTree = "<group>"; };
-		B7B494C11E54491C00908D89 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Thin.otf"; path = "../../../../../Library/Fonts/Gotham-Thin.otf"; sourceTree = "<group>"; };
-		B7B494C21E54491C00908D89 /* Gotham-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-ThinItalic.otf"; path = "../../../../../Library/Fonts/Gotham-ThinItalic.otf"; sourceTree = "<group>"; };
-		B7B494C31E54491C00908D89 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Ultra.otf"; path = "../../../../../Library/Fonts/Gotham-Ultra.otf"; sourceTree = "<group>"; };
-		B7B494C41E54491C00908D89 /* Gotham-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-UltraItalic.otf"; path = "../../../../../Library/Fonts/Gotham-UltraItalic.otf"; sourceTree = "<group>"; };
-		B7B494C51E54491C00908D89 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-XLight.otf"; path = "../../../../../Library/Fonts/Gotham-XLight.otf"; sourceTree = "<group>"; };
-		B7B494C61E54491C00908D89 /* Gotham-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-XLightItalic.otf"; path = "../../../../../Library/Fonts/Gotham-XLightItalic.otf"; sourceTree = "<group>"; };
-		B7B494C71E54491C00908D89 /* GothamRnd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-Bold.otf"; path = "../../../../../Library/Fonts/GothamRnd-Bold.otf"; sourceTree = "<group>"; };
-		B7B494C81E54491C00908D89 /* GothamRnd-BoldIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-BoldIta.otf"; path = "../../../../../Library/Fonts/GothamRnd-BoldIta.otf"; sourceTree = "<group>"; };
-		B7B494C91E54491C00908D89 /* GothamRnd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-Book.otf"; path = "../../../../../Library/Fonts/GothamRnd-Book.otf"; sourceTree = "<group>"; };
-		B7B494CA1E54491C00908D89 /* GothamRnd-BookIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-BookIta.otf"; path = "../../../../../Library/Fonts/GothamRnd-BookIta.otf"; sourceTree = "<group>"; };
-		B7B494CB1E54491C00908D89 /* GothamRnd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-Light.otf"; path = "../../../../../Library/Fonts/GothamRnd-Light.otf"; sourceTree = "<group>"; };
-		B7B494CC1E54491C00908D89 /* GothamRnd-LightIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-LightIta.otf"; path = "../../../../../Library/Fonts/GothamRnd-LightIta.otf"; sourceTree = "<group>"; };
-		B7B494CD1E54491C00908D89 /* GothamRnd-MedIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-MedIta.otf"; path = "../../../../../Library/Fonts/GothamRnd-MedIta.otf"; sourceTree = "<group>"; };
-		B7B494CE1E54491C00908D89 /* GothamRnd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRnd-Medium.otf"; path = "../../../../../Library/Fonts/GothamRnd-Medium.otf"; sourceTree = "<group>"; };
 		B7B494D01E544B3500908D89 /* memoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoViewController.swift; sourceTree = "<group>"; };
 		B7B494D21E544B7A00908D89 /* linkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linkViewController.swift; sourceTree = "<group>"; };
 		B7B494D51E54505300908D89 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -109,6 +87,7 @@
 			children = (
 				B7B494D51E54505300908D89 /* data.swift */,
 				B7B494D71E5584B100908D89 /* datasingle.swift */,
+				B748B3A31E5AD10E0081818C /* Models.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -135,13 +114,12 @@
 			isa = PBXGroup;
 			children = (
 				B7BA37A51E52CEB400C43ACE /* Assets.xcassets */,
-				B79BCBF11E4DDF08004A18B4 /* Main.storyboard */,
+				B73460261E57078B00712165 /* Main.storyboard */,
 				B787BDC11E56C7740086B9C4 /* data */,
 				B79BCBED1E4DDF08004A18B4 /* AppDelegate.swift */,
 				B79BCBEF1E4DDF08004A18B4 /* ViewController.swift */,
 				B7BA37B51E53277000C43ACE /* #2 */,
 				B7BA37B61E5327F400C43ACE /* #3 */,
-				B7B494D41E544B8600908D89 /* wrtingView */,
 				B79BCBF61E4DDF08004A18B4 /* LaunchScreen.storyboard */,
 				B79BCBF91E4DDF08004A18B4 /* Info.plist */,
 				B7B494CF1E54492300908D89 /* gotham_font */,
@@ -153,30 +131,6 @@
 		B7B494CF1E54492300908D89 /* gotham_font */ = {
 			isa = PBXGroup;
 			children = (
-				B7B494B71E54491C00908D89 /* Gotham-Black.otf */,
-				B7B494B81E54491C00908D89 /* Gotham-BlackItalic.otf */,
-				B7B494B91E54491C00908D89 /* Gotham-Bold.otf */,
-				B7B494BA1E54491C00908D89 /* Gotham-BoldItalic.otf */,
-				B7B494BB1E54491C00908D89 /* Gotham-Book.otf */,
-				B7B494BC1E54491C00908D89 /* Gotham-BookItalic.otf */,
-				B7B494BD1E54491C00908D89 /* Gotham-Light.otf */,
-				B7B494BE1E54491C00908D89 /* Gotham-LightItalic.otf */,
-				B7B494BF1E54491C00908D89 /* Gotham-Medium.otf */,
-				B7B494C01E54491C00908D89 /* Gotham-MediumItalic.otf */,
-				B7B494C11E54491C00908D89 /* Gotham-Thin.otf */,
-				B7B494C21E54491C00908D89 /* Gotham-ThinItalic.otf */,
-				B7B494C31E54491C00908D89 /* Gotham-Ultra.otf */,
-				B7B494C41E54491C00908D89 /* Gotham-UltraItalic.otf */,
-				B7B494C51E54491C00908D89 /* Gotham-XLight.otf */,
-				B7B494C61E54491C00908D89 /* Gotham-XLightItalic.otf */,
-				B7B494C71E54491C00908D89 /* GothamRnd-Bold.otf */,
-				B7B494C81E54491C00908D89 /* GothamRnd-BoldIta.otf */,
-				B7B494C91E54491C00908D89 /* GothamRnd-Book.otf */,
-				B7B494CA1E54491C00908D89 /* GothamRnd-BookIta.otf */,
-				B7B494CB1E54491C00908D89 /* GothamRnd-Light.otf */,
-				B7B494CC1E54491C00908D89 /* GothamRnd-LightIta.otf */,
-				B7B494CD1E54491C00908D89 /* GothamRnd-MedIta.otf */,
-				B7B494CE1E54491C00908D89 /* GothamRnd-Medium.otf */,
 			);
 			name = gotham_font;
 			sourceTree = "<group>";
@@ -219,6 +173,7 @@
 				B7BA378E1E50281E00C43ACE /* cardViewController.swift */,
 				B7BA379F1E5161DA00C43ACE /* AListTableViewCell.swift */,
 				B7BA37A11E51621A00C43ACE /* BListTableViewCell.swift */,
+				B7B494D41E544B8600908D89 /* wrtingView */,
 			);
 			name = "#3";
 			sourceTree = "<group>";
@@ -294,8 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B79BCBF81E4DDF08004A18B4 /* LaunchScreen.storyboard in Resources */,
+				B73460281E57078B00712165 /* Main.storyboard in Resources */,
 				B7BA37931E503D2000C43ACE /* listTableViewCell.xib in Resources */,
-				B79BCBF31E4DDF08004A18B4 /* Main.storyboard in Resources */,
 				B7BA37971E5040D200C43ACE /* cardlistTableViewCell.xib in Resources */,
 				B7BA37A61E52CEB400C43ACE /* Assets.xcassets in Resources */,
 			);
@@ -367,6 +322,7 @@
 				B7BA37B11E531A3300C43ACE /* FirstTableViewController.swift in Sources */,
 				B7BA37B01E531A3300C43ACE /* folderTableViewCell.swift in Sources */,
 				B79BCBEE1E4DDF08004A18B4 /* AppDelegate.swift in Sources */,
+				B748B3A41E5AD10E0081818C /* Models.swift in Sources */,
 				B7B494D81E5584B100908D89 /* datasingle.swift in Sources */,
 				B7BA379B1E5044D600C43ACE /* MainTableViewController.swift in Sources */,
 				B7BA37A21E51621A00C43ACE /* BListTableViewCell.swift in Sources */,
@@ -377,10 +333,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B79BCBF11E4DDF08004A18B4 /* Main.storyboard */ = {
+		B73460261E57078B00712165 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B79BCBF21E4DDF08004A18B4 /* Base */,
+				B73460271E57078B00712165 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

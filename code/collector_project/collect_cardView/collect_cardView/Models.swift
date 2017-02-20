@@ -7,3 +7,33 @@
 //
 
 import Foundation
+import RealmSwift
+
+class FolderData : Object {
+    dynamic var id = NSUUID().uuidString
+    dynamic var name : String = ""
+    let items = List<Source>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+
+class Source : Object {
+    dynamic var id = NSUUID().uuidString
+    dynamic var datasource : String = ""
+    // dynamic var memo : memodataSG?
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
+}
+
+/*
+class Link : Source {
+    
+}
+ */
+
